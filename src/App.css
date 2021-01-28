@@ -8,13 +8,30 @@ img{
 #overview{
   position: absolute;
   background-color: white;
-  top: 0px;
-  max-height: 100%;
+  top: 0;
+  left:0;
+  right:0;
+  max-height: 84%;
   color: black;
   overflow-x: auto;
   width: 87%;
+  margin-left: 15px;
+  transform: translateY(100%);
   visibility: hidden;
+  transition: transform 0.3s ease-in-out;
+  padding: 1rem;
 }
-#overview:hover{
-  display: block;
+#overview p{
+  font-size: 12px;
+}
+.container-img{
+  position: relative;
+}
+.container-img:hover #overview{
+  transform: translateY(0%);
+  visibility: inherit;
+
+}
+.infinite-scroll-component{
+  overflow: hidden!important;
 }
