@@ -53,7 +53,13 @@ function App () {
             dataLength={movies.length}
             next={getData}
             hasMore={true}
-            loader={<h4>Loading...</h4>}
+            loader={
+              <div className="d-flex justify-content-center mt-5">
+                <div className="spinner-border" role="status">
+                  <span className="sr-only">Loading...</span>
+                </div>
+              </div>
+            }
             >
             <div className="row">
             {movies.map((movie, index) => (
@@ -62,9 +68,9 @@ function App () {
              <div id="overview">
              <h5>OVERVIEW</h5>
              <p>{movie.overview}</p></div>
-             <div className="d-flex justify-content-between">
+             <div className="d-flex justify-content-between detail">
                <h5>{movie.title}</h5>
-               <span>{movie.vote_average}</span>
+               <span className="rating">{movie.vote_average}</span>
              </div>
             </div>
             ))}
